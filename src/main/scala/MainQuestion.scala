@@ -39,7 +39,7 @@ object MainQuestion extends App{
   println(z)
 
   // 4) Which client did most HTTP requests?
-  rdd.filter(_.retrieval_stage == "api_client").
+   rdd.filter(_.retrieval_stage == "api_client").
     keyBy(_.download_id).
     mapValues(l => 1).
     reduceByKey((a,b) => a + b).
